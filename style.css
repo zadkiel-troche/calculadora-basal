@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-body{
-    background: #f6f5f7; 
-    font-family: 'Montserrat', sans-serif;
-    color: #3E363F;
+body {
+    background: #f6f5f7;
+    font-family: "Montserrat", sans-serif;
+    color: #3e363f;
 }
 
-#contenedor{
+#contenedor {
+    display: flex;
     width: 900px;
     height: 500px;
     text-align: center;
@@ -15,11 +16,12 @@ body{
     inset: 0;
     margin: auto;
     border-radius: 10px;
-    overflow: hidden; 
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-#calculadora{
+#calculadora {
+    flex: 12;
     background: white;
     /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
     width: 50%;
@@ -27,8 +29,9 @@ body{
     float: left;
 }
 
-#detalle{
-    background: #FF416C;
+#detalle {
+    flex: 12;
+    background: #ff416c;
     /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
     width: 50%;
     height: 100%;
@@ -36,7 +39,7 @@ body{
     color: #f6f5f7;
 }
 
-.contenido{
+.contenido {
     /* Estas tres lineas van a centrar el contenido verticalmente dentro de cada div */
     position: relative;
     top: 50%;
@@ -46,7 +49,7 @@ body{
 }
 
 input {
-	width: 70%;
+    width: 70%;
     padding: 12px 15px;
     border: none;
     background-color: #eee;
@@ -54,32 +57,51 @@ input {
 
 button {
     margin-top: 15px;
+    margin-bottom: 20px;
     font-size: 15px;
-	font-weight: bold;
-	padding: 12px 45px;
-	border-radius: 30px;
-	background-color: #FF416C;
-	border: 1px solid #FF416C;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: transform 20ms ease-in;
+    font-weight: bold;
+    padding: 12px 45px;
+    border-radius: 30px;
+    background-color: #ff416c;
+    border: 1px solid #ff416c;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 20ms ease-in;
+}
+
+.d-none{
+    display: none;
 }
 
 button:active {
-	transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-#error{
+#error {
     color: red;
     font-weight: bold;
-    display: none;
 }
 
-.resultado{
-    color: #0A81D1;
+.resultado {
+    color: #0a81d1;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 5px;
-    display: none;
+}
+
+
+.loader {
+    margin: auto;
+    border: 10px solid #eeeeee; 
+    border-top: 10px solid #ff416c; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
